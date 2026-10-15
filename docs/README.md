@@ -158,8 +158,8 @@ from orca_gym.sensor.rgbd_camera import CameraWrapper
 ```powershell
 # 1. 先打开 OrcaStudio，加载好场景
 # 2. 再运行：
-cd C:\Users\86322\Documents\Codex\2026-09-23-datacollect
-& "C:\Users\86322\.conda\envs\orcalab\python.exe" -X utf8 -u collect.py --flip-lr
+cd <项目目录>
+& "<你的orcalab环境>\python.exe" -X utf8 -u collect.py --flip-lr
 ```
 
 详细说明见 **`采集使用说明.md`**。
@@ -189,8 +189,8 @@ cd C:\Users\86322\Documents\Codex\2026-09-23-datacollect
 ## 测试
 
 ```powershell
-cd C:\Users\86322\Documents\Codex\2026-09-23-datacollect
-& "C:\Users\86322\.conda\envs\orcalab\python.exe" -X utf8 run_all_tests.py
+cd <项目目录>
+& "<你的orcalab环境>\python.exe" -X utf8 run_all_tests.py
 ```
 
 当前结果：**52 passed, 0 failed**

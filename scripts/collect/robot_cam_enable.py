@@ -19,7 +19,7 @@
 
 用法
 ----
-    & "C:\\Users\\86322\\.conda\\envs\\orcalab\\python.exe" -X utf8 -u robot_cam_enable.py --status
+    & "<你的orcalab环境>\\python.exe" -X utf8 -u robot_cam_enable.py --status
     & "...python.exe" -X utf8 -u robot_cam_enable.py --on
     & "...python.exe" -X utf8 -u robot_cam_enable.py --off
 """

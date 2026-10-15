@@ -89,7 +89,7 @@ for k, v in fr.items():
         print("stream %-6s %sx%s mean=%.1f" % (k, v.shape[1], v.shape[0], v.mean()))
 
 # ---------- 3) 离屏 AgentCamera ----------
-ap = r"C:\Users\86322\.orcalab\viewport_image\color\AgentCamera_color_0.png"
+ap = os.path.expanduser("~/.orcalab/viewport_image/color/AgentCamera_color_0.png")
 if os.path.exists(ap):
     try:
         shutil.copy(ap, os.path.join(OUT, "agent_camera.png"))

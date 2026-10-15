@@ -16,7 +16,7 @@ from PIL import Image
 
 OUT = os.path.join(HERE, "_fov_probe", "vpcam")
 os.makedirs(OUT, exist_ok=True)
-SRC = r"C:\Users\86322\.orcalab\viewport_image\color\AgentCamera_color_0.png"
+SRC = os.path.expanduser("~/.orcalab/viewport_image/color/AgentCamera_color_0.png")
 
 m = OrcaMcp()
 m.connect()

@@ -1,10 +1,53 @@
 # -*- coding: utf-8 -*-
-"""对比各场景 JSON 的 package_references 与引擎当前 asset_sync_state 的包 id。"""
+"""对比各场景 JSON 的 package_references 与引擎当前 asset_sync_state 的包 id。
+
+用法：
+    python _pkg_check.py                # 巡检 scenes/ 目录下的场景文件
+    python _pkg_check.py <场景目录>      # 指定其他目录
+
+asset_sync_state.json 会自动定位（每台机器的工程 GUID 不同，不能写死）；
+也可用环境变量 ORCA_ASSET_SYNC_STATE 显式指定。
+"""
 import json, io, os, sys
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-SCENE_DIR = r"D:\OTHERS\OrcaLab\SimpleMovement"
-STATE = r"C:\Users\86322\AppData\Local\Orca\OrcaStudio\{3DB8A56E-2458-4543-93A1-1A41756B97DA}\user\asset_sync_state.json"
+HERE = os.path.dirname(os.path.abspath(__file__))
+SCENE_DIR = sys.argv[1] if len(sys.argv) > 1 else HERE
+
+
+def _find_state():
+    """自动定位 asset_sync_state.json。"""
+    cands = []
+    env = os.environ.get("ORCA_ASSET_SYNC_STATE")
+    if env:
+        cands.append(env)
+
+    roots = []
+    la = os.environ.get("LOCALAPPDATA")
+    if la:
+        roots.append(os.path.join(la, "Orca", "OrcaStudio"))
+    roots.append(os.path.join(os.path.expanduser("~"), "AppData", "Local",
+                              "Orca", "OrcaStudio"))
+    for root in roots:
+        if not os.path.isdir(root):
+            continue
+        for guid in sorted(os.listdir(root)):
+            p = os.path.join(root, guid, "user", "asset_sync_state.json")
+            if os.path.exists(p) and p not in cands:
+                cands.append(p)
+    for p in cands:
+        if os.path.exists(p):
+            return p
+    raise SystemExit(
+        "找不到 asset_sync_state.json。\n"
+        "  预期位置：%%LOCALAPPDATA%%\\Orca\\OrcaStudio\\<工程GUID>\\user\\asset_sync_state.json\n"
+        "  请确认 OrcaStudio 已启动过并同步过资产；\n"
+        "  或用环境变量 ORCA_ASSET_SYNC_STATE 指定完整路径。\n"
+        "  已尝试：%s" % cands
+    )
+
+
+STATE = _find_state()
 
 state = json.load(io.open(STATE, encoding="utf-8"))
 by_id, by_name, by_file = {}, {}, {}

@@ -15,7 +15,10 @@ scripts/collect/dataset/
 3rd-party/
 
 # ---------- 机器人 prefab 资产（约 330MB 二进制网格/贴图） ----------
-assets/
+# 注意：必须写成 /assets/（只匹配仓库根目录）。
+# 写成 assets/ 会连带忽略 scripts/teleop/assets/gripper_table.json ——
+# 那是 orca_rig.py 运行时硬依赖的夹爪标定表，缺了直接崩。
+/assets/
 
 # ---------- 调试、临时、备份目录 ----------
 backup/
@@ -25,6 +28,7 @@ _cam_test3/
 _diag/
 _now/
 _show/
+output/
 
 # ---------- 调试产出：截图与图像（共 341+ 张，约 230MB） ----------
 *.png
@@ -40,6 +44,9 @@ _show/
 *.orig_ref
 *.orig
 *~
+# Office / WPS 打开文档时生成的临时锁文件
+~$*
+.~lock.*#
 
 # ---------- Python 缓存 / 运行日志 ----------
 __pycache__/

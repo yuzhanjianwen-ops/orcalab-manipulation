@@ -105,8 +105,8 @@ for i in range(6):
         print("  idx%d ERR %s" % (i, str(e)[:120]))
     time.sleep(0.4)
     # 渲染结果落到 AgentCamera png
-    for cand in [r"C:\Users\86322\.orcalab\viewport_image\color\AgentCamera_color_0.png",
-                 r"C:\Users\86322\.orcalab\viewport_color_%d.png" % i]:
+    for cand in [os.path.expanduser("~/.orcalab/viewport_image/color/AgentCamera_color_0.png"),
+                 os.path.expanduser("~/.orcalab/viewport_color_%d.png") % i]:
         if os.path.exists(cand):
             try:
                 im = Image.open(cand)

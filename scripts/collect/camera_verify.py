@@ -2,7 +2,7 @@
 """camera_verify.py —— 机器人自带相机（camera_head/left/right）验证脚本。
 
 用法：
-  & "C:\\Users\\86322\\.conda\\envs\\orcalab\\python.exe" -X utf8 -u camera_verify.py            # 看状态
+  & "<你的orcalab环境>\\python.exe" -X utf8 -u camera_verify.py            # 看状态
   & "...python.exe" -X utf8 -u camera_verify.py --on                                            # 开相机
   & "...python.exe" -X utf8 -u camera_verify.py --grab                                           # 取图
 """

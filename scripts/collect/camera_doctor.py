@@ -1,7 +1,7 @@
 """camera_doctor.py —— 相机体检：一次看清 ncam / 端口 / 推流状态。
 
 用法（OrcaStudio 开着、仿真跑起来之后）：
-    & "C:\\Users\\86322\\.conda\\envs\\orcalab\\python.exe" -X utf8 -u camera_doctor.py
+    & "<你的orcalab环境>\\python.exe" -X utf8 -u camera_doctor.py
 """
 from __future__ import annotations
 import os, sys, socket, time

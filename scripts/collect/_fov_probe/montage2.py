@@ -3,7 +3,7 @@ import os, io, sys
 from PIL import Image, ImageDraw
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 D = r"D:\OTHERS\projects\orcalab-manipulation\scripts\collect\_fov_probe"
-vp = Image.open(r"C:\Users\86322\.orcalab\viewport_image\color\AgentCamera_color_0.png").convert("RGB")
+vp = Image.open(os.path.expanduser("~/.orcalab/viewport_image/color/AgentCamera_color_0.png")).convert("RGB")
 hd = Image.open(os.path.join(D, "stream_head.png")).convert("RGB")
 lf = Image.open(os.path.join(D, "stream_left.png")).convert("RGB")
 rt = Image.open(os.path.join(D, "stream_right.png")).convert("RGB")

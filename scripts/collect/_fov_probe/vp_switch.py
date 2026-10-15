@@ -8,7 +8,7 @@ from PIL import Image
 OUT = os.path.join(HERE, "_fov_probe", "viewport_cams")
 os.makedirs(OUT, exist_ok=True)
 m = OrcaMcp(); m.connect()
-src = r"C:\Users\86322\.orcalab\viewport_image\color\AgentCamera_color_0.png"
+src = os.path.expanduser("~/.orcalab/viewport_image/color/AgentCamera_color_0.png")
 for idx in range(6):
     try:
         r = call_text(m, "set_viewport_camera", {"camera_index": idx})

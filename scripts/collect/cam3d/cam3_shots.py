@@ -22,7 +22,7 @@ import orcalab.protos.edit_service_pb2_grpc as epg
 from orca_mcp import OrcaMcp, call_text
 
 EDIT_ADDR = '127.0.0.1:50151'
-VIEWPORT_DIR = r'C:\Users\86322\.orcalab\viewport_image'
+VIEWPORT_DIR = os.path.expanduser("~/.orcalab/viewport_image")
 OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'out_final')
 
 DEFAULT_CAMS = [

@@ -49,7 +49,7 @@ try:
 except Exception as e:
     print("   render warning:", str(e)[:100])
 time.sleep(1.0)
-src = r"C:\Users\86322\.orcalab\viewport_image\color\AgentCamera_color_0.png"
+src = os.path.expanduser("~/.orcalab/viewport_image/color/AgentCamera_color_0.png")
 dst = os.path.join(OUT, "B_mcp_viewport.png")
 shutil.copy(src, dst)
 im = Image.open(dst)

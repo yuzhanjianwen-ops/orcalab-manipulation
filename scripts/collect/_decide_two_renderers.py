@@ -35,7 +35,7 @@ from orca_mcp import OrcaMcp, call_text
 
 OUT = os.path.join(HERE, "_fov_probe", "twoRenderers")
 os.makedirs(OUT, exist_ok=True)
-AGENT = r"C:\Users\86322\.orcalab\viewport_image\color\AgentCamera_color_%d.png"
+AGENT = os.path.expanduser("~/.orcalab/viewport_image/color/AgentCamera_color_%d.png")
 
 u = ctypes.windll.user32
 CB = ctypes.WINFUNCTYPE(ctypes.c_bool, ctypes.c_int, ctypes.POINTER(ctypes.c_int))

@@ -26,7 +26,7 @@ from orca_mcp import OrcaMcp, call_text
 
 OUT = os.path.join(HERE, "_fov_probe", "evidence")
 os.makedirs(OUT, exist_ok=True)
-AGENT = r"C:\Users\86322\.orcalab\viewport_image\color\AgentCamera_color_%d.png"
+AGENT = os.path.expanduser("~/.orcalab/viewport_image/color/AgentCamera_color_%d.png")
 NAMES = {1: "camera_head", 2: "camera_left", 3: "camera_right"}
 
 u = ctypes.windll.user32

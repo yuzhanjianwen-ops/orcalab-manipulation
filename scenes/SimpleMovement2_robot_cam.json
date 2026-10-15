@@ -333,7 +333,7 @@
                 ],
                 "scale": 1.0
             },
-            "asset_path": "assets/e071469a36d3c8aa/simple_empty_kitchen/kitchen_night/prop/prefabs/basket_wood"
+            "asset_path": "assets/e071469a36d3c8aa/simple_empty_kitchen/kitchen_night/prop/prefabs/basket_kitchen_01"
         },
         {
             "name": "head_camera_1",
@@ -647,6 +647,28 @@
                     ]
                 }
             ]
+        }
+    ],
+    "package_references": [
+        {
+            "id": "fff12a1f-6d78-4043-968e-acdc02b435b4",
+            "name": "SimpleMovement_Screw"
+        },
+        {
+            "id": "2589f665-83df-4068-95ad-707862faac1b",
+            "name": "g1_omnipicker"
+        },
+        {
+            "id": "a284e930-ab0a-4014-add1-2db5ae5a4cf7",
+            "name": "Medical"
+        },
+        {
+            "id": "3a46ef91-f547-4641-8c06-043b37e71f44",
+            "name": "simple_empty_kitchen"
+        },
+        {
+            "id": "8c216d8b-7e73-4fd7-bac1-5a80c6612ee9",
+            "name": "camera"
         }
     ]
 }

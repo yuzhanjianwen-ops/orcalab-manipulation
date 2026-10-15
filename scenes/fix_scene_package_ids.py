@@ -38,9 +38,38 @@ import time
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-STATE_CANDIDATES = [
-    r"C:\Users\86322\AppData\Local\Orca\OrcaStudio\{3DB8A56E-2458-4543-93A1-1A41756B97DA}\user\asset_sync_state.json",
-]
+
+
+def _default_state_candidates():
+    """自动定位 asset_sync_state.json。
+
+    该文件位于
+        %LOCALAPPDATA%\\Orca\\OrcaStudio\\<工程GUID>\\user\\asset_sync_state.json
+    其中「工程 GUID」与用户名**每台机器都不同**，所以不能写死，必须动态查找。
+    也可用环境变量 ORCA_ASSET_SYNC_STATE 显式指定。
+    """
+    cands = []
+    env = os.environ.get("ORCA_ASSET_SYNC_STATE")
+    if env:
+        cands.append(env)
+
+    roots = []
+    la = os.environ.get("LOCALAPPDATA")
+    if la:
+        roots.append(os.path.join(la, "Orca", "OrcaStudio"))
+    roots.append(os.path.join(os.path.expanduser("~"), "AppData", "Local",
+                              "Orca", "OrcaStudio"))
+    for root in roots:
+        if not os.path.isdir(root):
+            continue
+        for guid in sorted(os.listdir(root)):
+            p = os.path.join(root, guid, "user", "asset_sync_state.json")
+            if os.path.exists(p) and p not in cands:
+                cands.append(p)
+    return cands
+
+
+STATE_CANDIDATES = _default_state_candidates()
 
 # 匹配 { "id": "<36位>", "name": "<...>" }（字节模式，保留原文件换行/编码）
 PAIR_RE = re.compile(

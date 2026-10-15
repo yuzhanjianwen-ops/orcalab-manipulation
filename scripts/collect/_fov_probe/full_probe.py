@@ -54,7 +54,7 @@ for i in range(6):
         print("png idx", i, "ERR", str(e)[:80])
     time.sleep(0.3)
 for i in range(6):
-    src = r"C:\Users\86322\.orcalab\viewport_color_%d.png" % i
+    src = os.path.expanduser("~/.orcalab/viewport_color_%d.png") % i
     dst = os.path.join(OUT, "vp_idx%d.png" % i)
     try:
         shutil.copy(src, dst); print("copied idx", i, Image.open(dst).size)

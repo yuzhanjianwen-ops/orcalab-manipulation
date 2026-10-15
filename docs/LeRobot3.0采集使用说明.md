@@ -47,14 +47,14 @@ HDF5 采集与 LeRobot 采集**两套并存，互不影响**。
 
 | 项 | 值 |
 |---|---|
-| 环境 | `orcalab`（`C:\Users\86322\.conda\envs\orcalab`） |
+| 环境 | `orcalab`（`<你的orcalab环境>`） |
 | Python | 3.12.13 |
 | lerobot | **0.6.2**（**editable 安装**，指向 `3rd-party/lerobot`） |
 
 ### 3.2 安装步骤（复现用）
 
 ```powershell
-$py = "C:\Users\86322\.conda\envs\orcalab\python.exe"
+$py = "<你的orcalab环境>\python.exe"
 
 # 1) 补三个缺失依赖
 & $py -m pip install huggingface_hub datasets draccus
@@ -124,7 +124,7 @@ powershell -ExecutionPolicy Bypass -File "D:\OTHERS\projects\orcalab-manipulatio
 
 ```powershell
 cd D:\OTHERS\projects\orcalab-manipulation\scripts\collect
-& "C:\Users\86322\.conda\envs\orcalab\python.exe" -X utf8 -u collect_lerobot.py `
+& "<你的orcalab环境>\python.exe" -X utf8 -u collect_lerobot.py `
     --keyboard --flip-lr `
     --lerobot-out D:\data\lerobot\pick_medbox
 ```
@@ -133,7 +133,7 @@ cd D:\OTHERS\projects\orcalab-manipulation\scripts\collect
 
 ```powershell
 cd D:\OTHERS\projects\orcalab-manipulation\scripts\collect
-& "C:\Users\86322\.conda\envs\orcalab\python.exe" -X utf8 -u collect_lerobot.py `
+& "<你的orcalab环境>\python.exe" -X utf8 -u collect_lerobot.py `
     --flip-lr `
     --lerobot-out D:\data\lerobot\pick_medbox
 ```
@@ -141,7 +141,7 @@ cd D:\OTHERS\projects\orcalab-manipulation\scripts\collect
 ### 4.3 断点续采（追加到已有数据集）
 
 ```powershell
-& "C:\Users\86322\.conda\envs\orcalab\python.exe" -X utf8 -u collect_lerobot.py `
+& "<你的orcalab环境>\python.exe" -X utf8 -u collect_lerobot.py `
     --keyboard --flip-lr `
     --lerobot-out D:\data\lerobot\pick_medbox --resume
 ```
@@ -271,8 +271,8 @@ cd D:\OTHERS\projects\orcalab-manipulation\scripts\collect
 
 ```powershell
 cd D:\OTHERS\projects\orcalab-manipulation\tests
-& "C:\Users\86322\.conda\envs\orcalab\python.exe" -X utf8 -u test_saver_lerobot.py
-& "C:\Users\86322\.conda\envs\orcalab\python.exe" -X utf8 run_all_tests.py
+& "<你的orcalab环境>\python.exe" -X utf8 -u test_saver_lerobot.py
+& "<你的orcalab环境>\python.exe" -X utf8 run_all_tests.py
 ```
 
 当前：**66 passed, 0 failed**。

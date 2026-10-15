@@ -1,12 +1,12 @@
 # 采集用法（三相机 + LeRobot 直存）
 
-环境：C:\Users\86322\miniconda3\envs\orcalab281\python.exe
+环境：C:\Users\<你的用户名>\miniconda3\envs\orcalab281\python.exe
 前置：OrcaStudio 26.8.1 已打开场景，仿真处于「外部控制」模式。
 
 ## 一条命令（推荐）
 
     cd D:\OTHERS\projects\orcalab-manipulation\scripts\collect
-    & "C:\Users\86322\miniconda3\envs\orcalab281\python.exe" collect.py `
+    & "C:\Users\<你的用户名>\miniconda3\envs\orcalab281\python.exe" collect.py `
         --keyboard --cam3-ws `
         --lerobot-out D:\data\lerobot\pick_medbox --task "pick the medbox" `
         --lerobot-fps 20

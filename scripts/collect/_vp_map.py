@@ -72,7 +72,7 @@ def gl_crop(im):
     return im.crop((x0, y0, W, H)), (x0, y0, W - x0, H - y0)
 
 
-ap = r"C:\Users\86322\.orcalab\viewport_image\color\AgentCamera_color_0.png"
+ap = os.path.expanduser("~/.orcalab/viewport_image/color/AgentCamera_color_0.png")
 h = find_orca()
 print("orca hwnd:", h)
 

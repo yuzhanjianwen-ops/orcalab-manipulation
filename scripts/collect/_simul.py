@@ -133,7 +133,7 @@ for vi in (1, 2, 3):
             continue
         Image.fromarray(v).save(os.path.join(OUT, "vp%d_stream_%s.png" % (vi, name)))
         print("   vs stream_%-5s %s  NCC=%.3f" % (name, "%dx%d" % (v.shape[1], v.shape[0]), ncc(g, cv(Image.fromarray(v)))))
-    ap = r"C:\Users\86322\.orcalab\viewport_image\color\AgentCamera_color_0.png"
+    ap = os.path.expanduser("~/.orcalab/viewport_image/color/AgentCamera_color_0.png")
     if os.path.exists(ap):
         try:
             shutil.copy(ap, os.path.join(OUT, "vp%d_agent.png" % vi))

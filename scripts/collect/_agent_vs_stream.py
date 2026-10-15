@@ -18,7 +18,7 @@ from orca_mcp import OrcaMcp, call_text
 
 OUT = os.path.join(HERE, "_fov_probe", "avs")
 os.makedirs(OUT, exist_ok=True)
-AP = r"C:\Users\86322\.orcalab\viewport_image\color\AgentCamera_color_0.png"
+AP = os.path.expanduser("~/.orcalab/viewport_image/color/AgentCamera_color_0.png")
 SZ = 256
 
 

@@ -47,25 +47,30 @@ orcalab-manipulation/
 │       ├── orca_mcp.py           MCP 客户端（创建/查询 env 等）
 │       ├── camera_verify.py      相机连通性自检
 │       ├── robot_cam_enable.py   机器人自带相机尝试启用
+│       ├── official_camera.py    引擎相机取图封装
+│       ├── ws_camera.py          WebSocket 相机推流封装
+│       ├── view_camera.py        视口相机取图
 │       ├── camera_doctor.py      相机诊断
-│       └── collect.py.orig_ref   改动前的原始参照（仅供比对）
+│       └── _fov_probe/           相机排查探针脚本归档
 ├── data/                         采集产出
 │   └── dataset/<时间戳>_<短uuid>/
 │       ├── episode.hdf5          每帧数据
 │       └── meta.json             episode 元信息
 ├── docs/                         全部文档（见第 6 节）
-├── layouts/                      OrcaLab 场景布局文件
-│   └── SimpleMovement2.json
 ├── scenes/                       场景 JSON 与资产路径维护脚本（见 scenes/README.md）
 │   ├── SimpleMovement2.json      ★ 主场景
+│   ├── SimpleMovement2_robot_cam.json  同上，但机器人换成「带相机」prefab
 │   ├── camera10_11.json          相机标定场景（三台机载相机定义）
 │   ├── fix_scene_asset_paths.py  修正场景里失效的资产路径
 │   └── ...
+├── environment.yml               完整 conda 环境（orcalab281，170 包，精确复现用）
+├── requirements-lock.txt         同上，pip 视角的锁定清单
 ├── tests/                        测试与验证脚本
 ├── materials/                    交付辅助材料（截图 / 录像 / 说明）
-└── 3rd-party/                    第三方 / 甲方代码（只读参考，**未纳入本仓库**）
-    ├── README.md                 来源与版本记录
-    └── OrcaManipulation/         甲方官方仓库副本（OSC 控制器、数采格式来源）
+└── 3rd-party/                    第三方 / 甲方代码（只读参考，**未纳入本仓库**，见第 9 节）
+    ├── OrcaManipulation/         甲方官方仓库副本（OSC 控制器、数采格式来源）
+    ├── OrcaGym/                  OrcaGym 参考副本
+    └── lerobot/                  huggingface/lerobot（LeRobot v3.0 格式来源）
 ```
 
 ### 仓库里有什么 / 没什么
@@ -75,13 +80,33 @@ orcalab-manipulation/
 | 排除项 | 体积 | 原因 |
 |---|---|---|
 | `3rd-party/` | ~414 MB | 上游仓库（lerobot / OrcaManipulation / OrcaGym），各有独立仓库 |
-| `assets/` | ~330 MB | 机器人 prefab 二进制网格与贴图 |
+| `/assets/` | ~330 MB | 机器人 prefab 二进制网格与贴图（见下方说明，**由云端资产库提供**） |
 | `scripts/collect/dataset/`、`data/` | ~240 MB | 采集产出（`episode.hdf5` 单文件 236MB，超 GitHub 100MB 限制） |
 | `scripts/collect/` 下调试截图、根目录 `*.png` | ~230 MB | 相机排查过程中的对比图，属过程产物 |
 | `_cam_test*/` `_diag/` `_now/` `_show/` `backup/` | ~32 MB | 临时目录与备份 |
 
-> 需要完整可运行环境时，自行补齐 `3rd-party/`（见 `3rd-party/README.md`）
-> 与 `assets/`（OrcaStudio 资产库导出）。
+> **关于资产**：场景 JSON 里出现的 `assets/e071469a36d3c8aa/...` 是 OrcaLab **云资产库的
+> 虚拟路径**，不对应仓库内的真实目录。这些资产以 `.pak` 包形式由 OrcaStudio 按需下发
+> （`user/downloaded_packages/`），场景打开时依据 `package_references` 字段自动同步 ——
+> **不需要随仓库分发**。前提是运行机已登录 OrcaLab 账号且订阅了对应资产包，
+> 清单见 `scenes/README.md`。
+>
+> 需要完整可运行环境时，只需补齐 `3rd-party/`（各上游仓库地址见第 9 节）。
+
+### 环境复现
+
+| 文件 | 用途 |
+|---|---|
+| `environment.yml` | **完整 conda 环境**（`orcalab281`，Python 3.12.13 + 170 个包），一键重建 |
+| `requirements-lock.txt` | 同上，`pip freeze` 视角的精确版本锁定 |
+| `requirements.txt` | 仅顶层依赖摘要，供人工阅读 |
+
+```powershell
+# 精确重建（推荐）
+conda env create -f environment.yml
+# 或在已有环境里补齐
+& "<你的python.exe>" -m pip install -r requirements-lock.txt
+```
 
 ---
 
@@ -90,7 +115,7 @@ orcalab-manipulation/
 | 项 | 值 |
 |---|---|
 | 操作系统 | Windows 10 / 11 |
-| Python | `C:\Users\<你的用户名>\.conda\envs\orcalab\python.exe` |
+| Python | `<你的orcalab环境>\python.exe`（我们用的是 conda env `orcalab281`，见 `environment.yml`） |
 | 关键点 | **必须加 `-X utf8`**（代码与日志含中文，缺了会 UnicodeEncodeError） |
 | 仿真端 | OrcaStudio / OrcaLab 需先启动并加载好场景 |
 | Python 版本 | 3.12（OrcaGym 环境自带） |
@@ -136,7 +161,7 @@ cd D:\OTHERS\projects\orcalab-manipulation\scripts\collect
 
 ```powershell
 cd D:\OTHERS\projects\orcalab-manipulation\scripts\collect
-& `C:\Users\86322\.conda\envs\orcalab\python.exe` -X utf8 -u collect_lerobot.py `
+& "<你的orcalab环境>\python.exe" -X utf8 -u collect_lerobot.py `
     --keyboard --flip-lr --lerobot-out D:/data/lerobot/pick_medbox
 ```
 
@@ -163,6 +188,7 @@ cd D:\OTHERS\projects\orcalab-manipulation\scripts\collect
 
 | 文档 | 内容 |
 |---|---|
+| `复现指南.md` | **甲方必读**：从零复现的完整步骤、前置条件、资产订阅、验收清单、无法覆盖的事项 |
 | `项目文档_代码地图与核心逻辑.md` | **先看这篇**：整体架构、模块职责、调用链 |
 | `手柄说明书.md` | 手柄各按键作用与手感说明 |
 | `键盘操作使用说明书.md` | 键盘各按键作用与手感说明 |
@@ -206,8 +232,12 @@ data/dataset/<YYYY-MM-DD_HHMMSS>_<短uuid>/
 
 ## 8. 新机器上跑起来（移植要点）
 
-1. 装好 OrcaLab 与 `orcalab` conda 环境（与仿真端版本一致）。
-2. 启动 OrcaStudio，加载 `layouts/SimpleMovement2.json`。
+> 完整的分步复现流程见 **`docs/复现指南.md`**（含前置条件、资产同步、验收步骤）。
+> 下面是最小要点。
+
+1. 装好 OrcaLab / OrcaStudio **26.8.1** 与 `orcalab281` conda 环境（版本需与仿真端一致；
+   环境清单见 `environment.yml`）。
+2. 启动 OrcaStudio，加载 `scenes/SimpleMovement2.json`（**主场景**）。
 3. 本目录可整份拷走，**无需改动代码**（路径均为相对当前文件的 `HERE` 推导）。
 4. 若目录结构被打乱，可用环境变量兜底：
    ```powershell
@@ -232,8 +262,11 @@ data/dataset/<YYYY-MM-DD_HHMMSS>_<短uuid>/
 | `scripts/collect/fields.py`、`saver_hdf5.py` | `src/dataStorage/G1OmniPickerDataStorage` 的 HDF5 字段设计 |
 | `scripts/collect/`（整体流程） | `SCRIPT-BASED-COLLECTION.md`、`src/envs/dataCollection/` |
 
-> 详细来源、分支、版本、获取方式见 `3rd-party/README.md`。
-> 若交付时不需要带第三方源码，**删掉整个 `3rd-party/` 即可**，不影响运行。
+> `3rd-party/` 本身**未纳入本仓库**（体积 414 MB，且 lerobot 自带 `.git`）。
+> 各上游来源与获取方式见上表；如需完整参考，按上表地址自行克隆即可。
+> 若交付时不需要带第三方源码，**删掉整个 `3rd-party/` 即可**，不影响运行 ——
+> 我们的代码只依赖 `orca_gym`（由 OrcaStudio 提供）与 `lerobot`（pip 安装），
+> 均**不依赖** `3rd-party/` 里的副本。
 
 ---
 

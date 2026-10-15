@@ -231,7 +231,7 @@ data/dataset/<YYYY-MM-DD_HHMMSS>_<短uuid>/
 
 每帧字段见 `docs/采集使用说明.md`（joint_pos / joint_vel / gripper_pos / ee_pos / ee_quat / action_* / timestamp 等）。
 
-**图像**：字段 `image` 已预留，但**当前为空** —— 场景内 MuJoCo `<camera>` 数量为 0，相机推流未打通，需甲方在 OrcaStudio 侧配置。**没有相机也能正常采集**，只是 episode 里没有图像。
+**图像**：字段 `image` 已接入。三台机载相机中左右腕取图正常；头部相机因父节点 `scale` 未正确乘入相机偏移，画面落在头部外壳内壁，需甲方在 OrcaStudio 里把相机沿视线外移约 0.3 m（详见 `docs/复现指南.md` 第六节）。**相机不阻塞采集** —— 图像缺失时 episode 仍完整记录状态与动作。
 
 ---
 
@@ -279,9 +279,10 @@ data/dataset/<YYYY-MM-DD_HHMMSS>_<短uuid>/
 
 | 项 | 状态 |
 |---|---|
-| 相机图像字段 | ❌ 未打通（待甲方 Studio 侧配置相机并推流） |
-| LeRobot 3.0 采集 | ✅ **已完成并验证**（collect_lerobot.py）；环境已配（lerobot 0.6.2），实采 243 帧通过 |
-| 遥操作手感 | ✅ 方向已校准（`--flip-lr` 组合已验证五个方向全对） |
+| 相机图像字段 | 部分可用 —— 左右腕取图正常；头部画面异常，待甲方在 Studio 里把相机外移约 0.3 m |
+| LeRobot 3.0 采集 | **已完成并验证**（`collect_lerobot.py`，lerobot 0.6.2），累计 9 条 episode / 10,346 帧 |
+| 遥操作手感 | 方向已校准（`--flip-lr` 组合已验证五个方向全对） |
+| 离线测试 | 66 项全部通过（`python tests\run_all_tests.py`） |
 
 ---
 
@@ -298,4 +299,4 @@ A：调整资产的接触参数（`solref` / `solimp` / `condim` / `friction`）
 
 ---
 
-_整理日期：2026-10-01_
+_整理日期：2026-10-01｜最后更新：2026-10-15_

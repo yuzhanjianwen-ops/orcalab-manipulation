@@ -76,7 +76,7 @@ teleop/
 ### 必须
 | 依赖 | 说明 |
 |---|---|
-| Python 3.11 | 与 `orcalab` conda 环境一致 |
+| Python 3.12 | 与 `orcalab281` conda 环境一致（实测 3.12.13） |
 | `numpy` | 数值计算 |
 | `scipy` | 姿态/旋转变换 |
 | **OrcaLab 仿真端** | 机器人模型与物理仿真（`localhost:50051`）|
@@ -111,7 +111,7 @@ teleop/
 `gripper_table.json` 已收进 `assets/`，不再依赖原来那个 `2026-09-17\xai\work` 目录。
 
 **2. Python 环境 — ❌ 需重建**
-新机器要装 Python 3.11 + `numpy` + `scipy`。
+新机器要装 Python 3.12 + `numpy` + `scipy`（完整清单见仓库根 `environment.yml` / `requirements-lock.txt`）。
 
 **3. `orca_gym` — ❌ 最大的门槛**
 这是甲方私有 SDK，且**版本必须与仿真端匹配**（甲方提过 7.x 与 8.x 的相机接口不兼容）。

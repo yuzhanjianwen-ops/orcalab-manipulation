@@ -5,8 +5,8 @@
 
 ## 一条命令（推荐）
 
-    cd D:\OTHERS\projects\orcalab-manipulation\scripts\collect
-    & "C:\Users\<你的用户名>\miniconda3\envs\orcalab281\python.exe" collect.py `
+    cd <仓库目录>\scripts\collect
+    & "<你的orcalab281环境>\python.exe" collect.py `
         --keyboard --cam3-ws `
         --lerobot-out D:\data\lerobot\pick_medbox --task "pick the medbox" `
         --lerobot-fps 20
@@ -72,3 +72,7 @@
 * Windows 下 LeRobot 必须 parallel_encoding=False（已内置）。
 * 读视频要 video_backend="pyav"（torchcodec 在 Windows 上缺 FFmpeg DLL）。
 * 三路 WebSocket 是**串行**连接，每路约 2s，启动时等约 7s 是正常的。
+* ⚠️ **头部相机画面异常（未闭环）**：`camera_head` 因父节点 `scale` 未正确乘入相机偏移，
+  取到的画面落在机器人头部外壳内壁；左右腕两台正常（与编辑器视口一致）。
+  根因与修复方案见 [`相机取图根因结论与修复方案.md`](相机取图根因结论与修复方案.md)。
+  **修复前，`observation.images.head` 这一路视频不可用**，训练时应先排除。

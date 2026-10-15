@@ -5,8 +5,9 @@
 用于确定「药瓶被抬起时滑脱」该调哪个参数。
 """
 import os, sys, io
-# 本文件位于 teleop/tests/，操作模块根目录在上一级
-HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# 本文件位于 tests/，操作模块在 scripts/teleop
+HERE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                    "scripts", "teleop")
 sys.path.insert(0, HERE)
 os.chdir(HERE)
 

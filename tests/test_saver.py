@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
 """HDF5 落盘测试 + 往返读取校验。"""
 import os, shutil, tempfile
+import sys as _sys
+# 本文件位于 tests/，被测模块在 scripts/collect —— 加入 sys.path，任意目录都能独立运行
+_COLLECT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        "scripts", "collect")
+if _COLLECT not in _sys.path:
+    _sys.path.insert(0, _COLLECT)
+
 import numpy as np
 from recorder import Recorder, State
 import saver_hdf5

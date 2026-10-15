@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import sys, os
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# 本文件位于 tests/，orca_boot 在 scripts/collect
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                "scripts", "collect"))
 
 import orca_boot                      # noqa: F401  必须最先导入
 print("log_dir:", orca_boot.log_dir())

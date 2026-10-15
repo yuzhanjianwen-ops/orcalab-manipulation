@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 """keymap.py 单元测试：边沿检测、映射、长按不连发。"""
+import os as _os, sys as _sys
+# 本文件位于 tests/，被测模块在 scripts/collect —— 加入 sys.path，任意目录都能独立运行
+_COLLECT = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                         "scripts", "collect")
+if _COLLECT not in _sys.path:
+    _sys.path.insert(0, _COLLECT)
+
 import numpy as np
 from recorder import Recorder, State
 from keymap import DpadRecorder

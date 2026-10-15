@@ -10,12 +10,13 @@
 """
 
 import os as _os, sys as _sys
-# 本文件位于 teleop/tests/，把上一级(操作模块根)加入 sys.path，
+# 本文件位于 tests/，被测模块在 scripts/teleop —— 加入 sys.path 并切到该目录，
 # 这样无论从哪个目录运行都能 import 到 keypad / gamepad / teleop。
-_ROOT = _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))
-if _ROOT not in _sys.path:
-    _sys.path.insert(0, _ROOT)
-_os.chdir(_ROOT)
+_TELEOP = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                        "scripts", "teleop")
+if _TELEOP not in _sys.path:
+    _sys.path.insert(0, _TELEOP)
+_os.chdir(_TELEOP)
 
 import keypad
 

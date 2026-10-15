@@ -1,0 +1,15 @@
+sim: {"state": "Stopped", "running": false}
+hwnd: 722820
+idx0 free/idx0     pos=[22.496, -3.531, 12.582] rot=[-65.26, 0.0, 86.06] scale=1.0
+  engine render: 1178721 B
+  屏幕 vs 引擎同姿态渲染 差异 = 24.99
+idx1 camera_head   pos=[18.057, -3.377, 2.116] rot=[-29.14, -0.11, 90.36] scale=1.6953575611114502
+  engine render: 253207 B
+  屏幕 vs 引擎同姿态渲染 差异 = 150.23
+idx2 camera_left   pos=[18.244, -4.691, 1.922] rot=[-0.12, -0.85, -179.64] scale=1.6953582763671875
+  engine render: 983743 B
+  屏幕 vs 引擎同姿态渲染 差异 = 23.84
+idx3 camera_right  pos=[18.22, -2.057, 1.871] rot=[0.11, 0.85, 0.36] scale=1.6953582763671875
+  engine render: 837758 B
+  屏幕 vs 引擎同姿态渲染 差异 = 22.83
+saved D:\OTHERS\projects\orcalab-manipulation\scripts\collect\_fov_probe\poseRender\pose_render_montage.png (2844, 416)

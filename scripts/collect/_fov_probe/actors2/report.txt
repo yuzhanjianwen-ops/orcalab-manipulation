@@ -1,0 +1,95 @@
+sim: {"state": "Stopped", "running": false}
+
+==============================================================================
+全部 actor
+==============================================================================
+总数: 12   (顶层键示例: ['/', '/Group', '/Group/Static_Objcets', '/Group/Static_Objcets/Table', '/Group/Interactive_Objcets', '/dual_arm_collaborative_service_robot_1'] )
+  /                                             
+        pos=[0.0, 0.0, 0.0]
+        rot=[0.0, 0.0, 0.0]  scale=1.0  parent=None
+  /Group                                        
+        pos=[0.0, 0.0, 0.0]
+        rot=[0.0, 0.0, 0.0]  scale=1.0  parent=root
+  /Group/Interactive_Objcets                    
+        pos=[0.0, 0.0, 0.0]
+        rot=[0.0, 0.0, 0.0]  scale=1.0  parent=Group
+  /Group/Static_Objcets                         
+        pos=[0.0, 0.0, 0.0]
+        rot=[0.0, 0.0, 0.0]  scale=1.0  parent=Group
+  /Group/Static_Objcets/Table                   
+        pos=[16.9068, -3.4752, -0.0]
+        rot=[0.0, 0.0, 90.0]  scale=1.0  parent=Static_Objcets
+  /calcium_gluconate_tablets_bottle_1           
+        pos=[17.0878, -3.7767, 1.2303]
+        rot=[0.0, 0.0, 0.0]  scale=0.9973110556602478  parent=root
+  /dual_arm_collaborative_service_robot_1       
+        pos=[18.464, -3.3896, 0.0383]
+        rot=[-0.111, -0.852, -179.639]  scale=1.695356845855713  parent=root
+  /head_camera_1                                
+        pos=[18.45, -3.35, 2.15]
+        rot=[33.65, -17.692, -0.0]  scale=1.0  parent=root
+  /qiangli_pipalu_medication_box_1              
+        pos=[17.1486, -2.9352, 1.2406]
+        rot=[0.0, 0.0, 90.0]  scale=1.4395737648010254  parent=root
+  /wooden_lattice_tray_1                        
+        pos=[17.0111, -3.3578, 1.2392]
+        rot=[0.0, 0.0, 91.307]  scale=1.0  parent=root
+  /wrist_camera_l                               
+        pos=[18.244, -4.691, 1.922]
+        rot=[18.215, -58.053, -0.0]  scale=1.0  parent=root
+  /wrist_camera_r                               
+        pos=[18.22, -2.057, 1.871]
+        rot=[24.461, 39.345, -0.0]  scale=1.0  parent=root
+
+==============================================================================
+机器人 / 相机 的属性明细
+==============================================================================
+--- /dual_arm_collaborative_service_robot_1 ---
+2 validation errors for call[get_actor_properties]
+asset_path
+  Missing required argument [type=missing_argument, input_value={'actor_path': '/dual_arm...rative_service_robot_1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.14/v/missing_argument
+actor_path
+  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='/dual_arm_collaborative_service_robot_1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.14/v/unexpected_keyword_argument
+--- /head_camera_1 ---
+2 validation errors for call[get_actor_properties]
+asset_path
+  Missing required argument [type=missing_argument, input_value={'actor_path': '/head_camera_1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.14/v/missing_argument
+actor_path
+  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='/head_camera_1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.14/v/unexpected_keyword_argument
+--- /wrist_camera_l ---
+2 validation errors for call[get_actor_properties]
+asset_path
+  Missing required argument [type=missing_argument, input_value={'actor_path': '/wrist_camera_l'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.14/v/missing_argument
+actor_path
+  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='/wrist_camera_l', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.14/v/unexpected_keyword_argument
+--- /wrist_camera_r ---
+2 validation errors for call[get_actor_properties]
+asset_path
+  Missing required argument [type=missing_argument, input_value={'actor_path': '/wrist_camera_r'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.14/v/missing_argument
+actor_path
+  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='/wrist_camera_r', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.14/v/unexpected_keyword_argument
+
+==============================================================================
+实体层级 get_entity_hierarchy
+==============================================================================
+--- root='' ---
+1 validation error for call[get_entity_hierarchy]
+asset_path
+  Missing required argument [type=missing_argument, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.14/v/missing_argument
+--- root='/dual_arm_collaborative_service_robot_1' ---
+2 validation errors for call[get_entity_hierarchy]
+asset_path
+  Missing required argument [type=missing_argument, input_value={'actor_path': '/dual_arm...rative_service_robot_1'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.14/v/missing_argument
+actor_path
+  Unexpected keyword argument [type=unexpected_keyword_argument, input_value='/dual_arm_collaborative_service_robot_1', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.14/v/unexpected_keyword_argument

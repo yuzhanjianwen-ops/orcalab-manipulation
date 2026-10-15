@@ -1,0 +1,12 @@
+MCP ok | sim: {"state": "Running", "running": true}
+OrcaStudio hwnd: 722820
+OrcaRig 已连接: nu=40 dt=0.0200
+WsCameraFeed.open -> True | 
+推流帧: {'head': (480, 640, 3), 'left': (480, 640, 3), 'right': (480, 640, 3)}
+idx0  gl=1037x920  pos=[22.496, -3.531, 12.582] scale=1.0
+idx1  gl=1037x920  pos=[18.076, -3.375, 2.125] scale=1.6953575611114502
+idx2  gl=1037x920  pos=[18.205, -4.071, 0.712] scale=1.695358395576477
+idx3  gl=1037x920  pos=[18.191, -2.766, 0.67] scale=1.695358395576477
+idx4  gl=1037x920  pos=[22.496, -3.531, 12.582] scale=1.0
+idx5  gl=1037x920  pos=[22.496, -3.531, 12.582] scale=1.0
+idx6  gl=1037x920  pos=[22.496, -3.531, 12.582] scale=1.0

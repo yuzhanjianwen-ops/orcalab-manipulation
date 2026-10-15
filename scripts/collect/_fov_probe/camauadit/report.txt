@@ -1,0 +1,34 @@
+======================================================================
+A. 编辑器 50151 GetCameras()
+======================================================================
+  idx=0  name=Camera             actor=
+  idx=1  name=camera_head        actor=/dual_arm_collaborative_service_robot_1
+  idx=2  name=camera_left        actor=/dual_arm_collaborative_service_robot_1
+  idx=3  name=camera_right       actor=/dual_arm_collaborative_service_robot_1
+  idx=4  name=camera             actor=/head_camera_1
+  idx=5  name=camera             actor=/wrist_camera_l
+  idx=6  name=camera             actor=/wrist_camera_r
+
+======================================================================
+B. 引擎 MCP get_all_actors() —— 只列名字含 camera/相机 的
+======================================================================
+sim: {"state": "Stopped", "running": false}
+  actor 总数: 12
+  /head_camera_1                     pos=[18.45, -3.35, 2.15] rot=[33.65, -17.692, -0.0] scale=1.0 parent=root
+  /wrist_camera_l                    pos=[18.244, -4.691, 1.922] rot=[18.215, -58.053, -0.0] scale=1.0 parent=root
+  /wrist_camera_r                    pos=[18.22, -2.057, 1.871] rot=[24.461, 39.345, -0.0] scale=1.0 parent=root
+  相机相关 actor 数: 3
+
+======================================================================
+C. 视口三台机载相机的世界位姿（50151 SetActiveCamera + MCP get_viewport_transform）
+======================================================================
+  idx1 camera_head   pos=[18.057, -3.3775, 2.1156] rot=[-29.142, -0.114, 90.364] scale=1.6953575611114502
+  idx2 camera_left   pos=[18.2442, -4.6914, 1.9221] rot=[-0.116, -0.852, -179.639] scale=1.6953582763671875
+  idx3 camera_right  pos=[18.2201, -2.057, 1.8713] rot=[0.105, 0.852, 0.361] scale=1.6953582763671875
+
+======================================================================
+D. 视口相机自带的参数 get_viewport_camera_info
+======================================================================
+  idx1: {"success": true, "message": "成功获取当前视口相机的信息", "transform": {"position": [22.49608612060547, -3.530707359313965, 12.581901550292969], "rotation": [-65.25637707942381, 3.175061970395266e-05, 86.06443074087188]}, "color_path": "C:\\Users\\86322\\.orcalab\\viewport_image\\color\\AgentCamera_color_1.png", "depth_path": "C:\\Users\\86322\\.orcalab\\viewport_image\\depth\\AgentCamera_depth_1.npy", "objec
+  idx2: {"success": true, "message": "成功获取当前视口相机的信息", "transform": {"position": [22.49608612060547, -3.530707359313965, 12.581901550292969], "rotation": [-65.25637707942381, 3.175061970395266e-05, 86.06443074087188]}, "color_path": "C:\\Users\\86322\\.orcalab\\viewport_image\\color\\AgentCamera_color_2.png", "depth_path": "C:\\Users\\86322\\.orcalab\\viewport_image\\depth\\AgentCamera_depth_2.npy", "objec
+  idx3: {"success": true, "message": "成功获取当前视口相机的信息", "transform": {"position": [22.49608612060547, -3.530707359313965, 12.581901550292969], "rotation": [-65.25637707942381, 3.175061970395266e-05, 86.06443074087188]}, "color_path": "C:\\Users\\86322\\.orcalab\\viewport_image\\color\\AgentCamera_color_3.png", "depth_path": "C:\\Users\\86322\\.orcalab\\viewport_image\\depth\\AgentCamera_depth_3.npy", "objec

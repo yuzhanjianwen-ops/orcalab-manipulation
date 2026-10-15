@@ -1,0 +1,109 @@
+{
+  "baseline": {
+    "camera_head": {
+      "streaming": true,
+      "rgb": true,
+      "fov": 90.0,
+      "w": 640,
+      "h": 480,
+      "near": 0.20000000298023224,
+      "far": 1024.0,
+      "port": 7070
+    },
+    "camera_left": {
+      "streaming": true,
+      "rgb": true,
+      "fov": 90.0,
+      "w": 640,
+      "h": 480,
+      "near": 0.20000000298023224,
+      "far": 1024.0,
+      "port": 7080
+    },
+    "camera_right": {
+      "streaming": true,
+      "rgb": true,
+      "fov": 90.0,
+      "w": 640,
+      "h": 480,
+      "near": 0.20000000298023224,
+      "far": 1024.0,
+      "port": 7090
+    }
+  },
+  "after_set_60": {
+    "camera_head": 60.0,
+    "camera_left": 60.0,
+    "camera_right": 60.0
+  },
+  "fov_changed_to_60": true,
+  "restored": {
+    "camera_head": 90.0,
+    "camera_left": 90.0,
+    "camera_right": 90.0
+  },
+  "saved_fov90": {
+    "head": {
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "mean": 117.95,
+      "std": 68.18,
+      "path": "D:\\OTHERS\\projects\\orcalab-manipulation\\scripts\\collect\\_fov_probe\\fov90_head.png"
+    },
+    "left": {
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "mean": 102.64,
+      "std": 29.87,
+      "path": "D:\\OTHERS\\projects\\orcalab-manipulation\\scripts\\collect\\_fov_probe\\fov90_left.png"
+    },
+    "right": {
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "mean": 106.55,
+      "std": 32.12,
+      "path": "D:\\OTHERS\\projects\\orcalab-manipulation\\scripts\\collect\\_fov_probe\\fov90_right.png"
+    }
+  },
+  "saved_fov60": {
+    "head": {
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "mean": 113.22,
+      "std": 55.58,
+      "path": "D:\\OTHERS\\projects\\orcalab-manipulation\\scripts\\collect\\_fov_probe\\fov60_head.png"
+    },
+    "left": {
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "mean": 100.0,
+      "std": 28.56,
+      "path": "D:\\OTHERS\\projects\\orcalab-manipulation\\scripts\\collect\\_fov_probe\\fov60_left.png"
+    },
+    "right": {
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "mean": 104.38,
+      "std": 29.91,
+      "path": "D:\\OTHERS\\projects\\orcalab-manipulation\\scripts\\collect\\_fov_probe\\fov60_right.png"
+    }
+  }
+}

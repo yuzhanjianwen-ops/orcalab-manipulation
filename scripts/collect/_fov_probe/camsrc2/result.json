@@ -1,0 +1,17 @@
+{
+  "/head_camera_1": {
+    "head": 20.53,
+    "left": 0.25,
+    "right": 0.16
+  },
+  "/wrist_camera_l": {
+    "head": 24.23,
+    "left": 0.25,
+    "right": 0.11
+  },
+  "/wrist_camera_r": {
+    "head": 24.24,
+    "left": 0.42,
+    "right": 0.11
+  }
+}

@@ -1,0 +1,5 @@
+open: True | 
+原始位姿: {'/head_camera_1': [18.45, -3.35, 2.15], '/wrist_camera_l': [18.244, -4.691, 1.922], '/wrist_camera_r': [18.22, -2.057, 1.871]}
+只搬走 /head_camera_1     -> 各推流像素差 {'head': 20.53, 'left': 0.25, 'right': 0.16}
+只搬走 /wrist_camera_l    -> 各推流像素差 {'head': 24.23, 'left': 0.25, 'right': 0.11}
+只搬走 /wrist_camera_r    -> 各推流像素差 {'head': 24.24, 'left': 0.42, 'right': 0.11}

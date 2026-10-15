@@ -1,0 +1,11 @@
+sim: {"state": "Stopped", "running": false}
+get_viewport_camera_info(1) -> {"success": true, "message": "成功获取当前视口相机的信息", "transform": {"position": [18.056987762451172, -3.3774752616882324, 2.115598678588867], "rotation": [-29.142166280808585, -0.11358558049608362, 90.36396284834078]}, "color_path": "C:\\Users\\86322\\.orcalab\\viewpo
+A 引擎离屏 AgentCamera_color_1.png : (1080, 1080)
+B Studio渲染@AgentCamera位姿 : (1080, 1080)
+C Studio渲染@idx1真实位姿 : (1080, 1080)
+
+A vs B (同一位姿，引擎渲染器 vs Studio渲染器) = 137.52
+B vs D (Studio渲染 vs 编辑器屏幕, 同一位姿)   = 150.23
+C vs D (Studio@idx1位姿 vs 编辑器屏幕idx1)   = 150.20
+A vs D (引擎离屏 vs 编辑器屏幕)              = 33.60
+saved D:\OTHERS\projects\orcalab-manipulation\scripts\collect\_fov_probe\twoRenderers\two_renderers_montage.png (1518, 426)

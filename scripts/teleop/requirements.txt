@@ -1,0 +1,11 @@
+# OrcaLab 双臂遥操作 — 运行依赖
+#
+# 注意：本项目**不需要**安装以下第三方手柄库，手柄读取是纯 ctypes 实现的 XInput：
+#   pygame / vgamepad / inputs / hidapi
+numpy>=1.24
+scipy>=1.10
+#
+# 以下由 OrcaLab / OrcaGym 环境提供，不要单独 pip 安装（版本需与仿真端一致）：
+#   gymnasium
+#   mujoco
+#   orca_gym        <- 含 robosuite OSC_POSE 控制器拷贝（OSC 算法来源）

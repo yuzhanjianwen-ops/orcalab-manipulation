@@ -1,0 +1,23 @@
+# OrcaLab 双臂机器人操作与数据采集 — 运行依赖汇总
+#
+# 安装（示例，请换成你自己的 orcalab 环境解释器）：
+#   & "<你的python.exe>" -m pip install -r requirements.txt
+
+# ---------- 遥操作 ----------
+numpy>=1.24
+scipy>=1.10
+
+# ---------- 数据采集 ----------
+h5py>=3.8            # HDF5 落盘
+av>=12.0             # 相机 H.264 流解码（相机就绪后需要）
+opencv-python>=4.8   # 图像格式转换
+websockets>=12.0     # 连接相机推流服务
+
+# ---------- 由 OrcaLab / OrcaGym 环境提供，切勿单独安装 ----------
+# gymnasium
+# mujoco
+# orca_gym          <- 含 robosuite OSC_POSE 控制器拷贝（OSC 算法来源）
+
+# ---------- 明确不需要 ----------
+# 手柄读取为纯 ctypes 实现的 XInput，无需以下库：
+#   pygame / vgamepad / inputs / hidapi

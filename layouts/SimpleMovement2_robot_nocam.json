@@ -1,0 +1,652 @@
+{
+    "version": "3.0",
+    "viewport_camera_transform": {
+        "position": [
+            17.369064331054688,
+            -3.555091142654419,
+            2.321481704711914
+        ],
+        "rotation": [
+            0.6156136002446209,
+            -0.39412842512932217,
+            -0.3679449084705149,
+            0.5747166467308571
+        ]
+    },
+    "actors": [
+        {
+            "name": "Group",
+            "path": "/Group",
+            "type": "GroupActor",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": 1.0
+            },
+            "children": [
+                {
+                    "name": "Static_Objcets",
+                    "path": "/Group/Static_Objcets",
+                    "type": "GroupActor",
+                    "transform": {
+                        "position": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "rotation": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": 1.0
+                    },
+                    "children": [
+                        {
+                            "name": "Table",
+                            "path": "/Group/Static_Objcets/Table",
+                            "type": "AssetActor",
+                            "transform": {
+                                "position": [
+                                    16.906848907470703,
+                                    -3.4752464294433594,
+                                    -2.384185791015625e-07
+                                ],
+                                "rotation": [
+                                    0.7071071107358423,
+                                    0.0,
+                                    0.0,
+                                    0.7071064516370992
+                                ],
+                                "scale": 1.0
+                            },
+                            "asset_path": "assets/e071469a36d3c8aa/simplemovement_screw/simple_case_robot/diningtableseries/table"
+                        }
+                    ]
+                },
+                {
+                    "name": "Interactive_Objcets",
+                    "path": "/Group/Interactive_Objcets",
+                    "type": "GroupActor",
+                    "transform": {
+                        "position": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "rotation": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": 1.0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "dual_arm_collaborative_service_robot_1",
+            "path": "/dual_arm_collaborative_service_robot_1",
+            "type": "AssetActor",
+            "transform": {
+                "position": [
+                    18.464027404785156,
+                    -3.389557123184204,
+                    0.038295261561870575
+                ],
+                "rotation": [
+                    0.003141933945486861,
+                    -0.007439579562207191,
+                    0.0009432016784620729,
+                    -0.9999669450924933
+                ],
+                "scale": 1.695356845855713
+            },
+            "asset_path": "assets/e071469a36d3c8aa/default_project/prefabs/g1_omnipicker_usda",
+            "entity_overrides": [
+                {
+                    "entity_path": [],
+                    "group_overrids": [
+                        {
+                            "type_id": "{22B10178-39B6-4C12-BB37-77DB45FDD3B6}",
+                            "type_index": 0,
+                            "property_overrides": [
+                                {
+                                    "name": "rotate.x",
+                                    "value": 0.10541258007287979,
+                                    "type": "float"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "qiangli_pipalu_medication_box_1",
+            "path": "/qiangli_pipalu_medication_box_1",
+            "type": "AssetActor",
+            "transform": {
+                "position": [
+                    17.148571014404297,
+                    -2.9352476596832275,
+                    1.2406435012817383
+                ],
+                "rotation": [
+                    0.7071068109888685,
+                    0.0,
+                    0.0,
+                    0.7071067513842252
+                ],
+                "scale": 1.4395737648010254
+            },
+            "asset_path": "assets/e071469a36d3c8aa/medical/medical/medical_04/medical_04",
+            "entity_overrides": [
+                {
+                    "entity_path": [
+                        {
+                            "name": "Medical_04",
+                            "index": 0
+                        },
+                        {
+                            "name": "Medical_04",
+                            "index": 0
+                        },
+                        {
+                            "name": "Entity17",
+                            "index": 1
+                        }
+                    ],
+                    "group_overrids": [
+                        {
+                            "type_id": "{39E400EC-2015-416D-8483-3C64041787A5}",
+                            "type_index": 0,
+                            "property_overrides": [
+                                {
+                                    "name": "hardness",
+                                    "value": 0.699999988079071,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "condim",
+                                    "value": 6,
+                                    "type": "int"
+                                },
+                                {
+                                    "name": "friction.y",
+                                    "value": 0.15000000596046448,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "friction.z",
+                                    "value": 0.009999999776482582,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "solimp.x",
+                                    "value": 0.9800000190734863,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "solimp.y",
+                                    "value": 0.9990000128746033,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "solref.x",
+                                    "value": 0.00800000037997961,
+                                    "type": "float"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "calcium_gluconate_tablets_bottle_1",
+            "path": "/calcium_gluconate_tablets_bottle_1",
+            "type": "AssetActor",
+            "transform": {
+                "position": [
+                    17.0877742767334,
+                    -3.7767202854156494,
+                    1.2302552461624146
+                ],
+                "rotation": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": 0.9973110556602478
+            },
+            "asset_path": "assets/e071469a36d3c8aa/medical/medical/medical_32/medical_32",
+            "entity_overrides": [
+                {
+                    "entity_path": [
+                        {
+                            "name": "Medical_32",
+                            "index": 0
+                        },
+                        {
+                            "name": "Medical_32",
+                            "index": 0
+                        },
+                        {
+                            "name": "Medical_32",
+                            "index": 0
+                        },
+                        {
+                            "name": "Collisions",
+                            "index": 0
+                        },
+                        {
+                            "name": "1",
+                            "index": 2
+                        }
+                    ],
+                    "group_overrids": [
+                        {
+                            "type_id": "{39E400EC-2015-416D-8483-3C64041787A5}",
+                            "type_index": 0,
+                            "property_overrides": [
+                                {
+                                    "name": "condim",
+                                    "value": 6,
+                                    "type": "int"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "entity_path": [
+                        {
+                            "name": "Medical_32",
+                            "index": 0
+                        },
+                        {
+                            "name": "Medical_32",
+                            "index": 0
+                        },
+                        {
+                            "name": "Medical_32",
+                            "index": 0
+                        },
+                        {
+                            "name": "Collisions",
+                            "index": 0
+                        },
+                        {
+                            "name": "1",
+                            "index": 0
+                        }
+                    ],
+                    "group_overrids": [
+                        {
+                            "type_id": "{39E400EC-2015-416D-8483-3C64041787A5}",
+                            "type_index": 0,
+                            "property_overrides": [
+                                {
+                                    "name": "meshScale.x",
+                                    "value": 2.5,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "solref.x",
+                                    "value": 0.0020000000949949026,
+                                    "type": "float"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wooden_lattice_tray_1",
+            "path": "/wooden_lattice_tray_1",
+            "type": "AssetActor",
+            "transform": {
+                "position": [
+                    17.01108169555664,
+                    -3.3577957153320312,
+                    1.2392107248306274
+                ],
+                "rotation": [
+                    0.6989960123097456,
+                    0.0,
+                    0.0,
+                    0.7151255657400831
+                ],
+                "scale": 1.0
+            },
+            "asset_path": "assets/e071469a36d3c8aa/simple_empty_kitchen/kitchen_night/prop/prefabs/basket_wood"
+        },
+        {
+            "name": "head_camera_1",
+            "path": "/head_camera_1",
+            "type": "AssetActor",
+            "transform": {
+                "position": [
+                    18.45,
+                    -3.35,
+                    2.15
+                ],
+                "rotation": [
+                    0.9458086843540164,
+                    0.28600366648951575,
+                    -0.14719591146227554,
+                    0.04451066168760133
+                ],
+                "scale": 1.0
+            },
+            "asset_path": "assets/e071469a36d3c8aa/camera/camera",
+            "entity_overrides": [
+                {
+                    "entity_path": [],
+                    "group_overrids": [
+                        {
+                            "type_id": "{22B10178-39B6-4C12-BB37-77DB45FDD3B6}",
+                            "type_index": 0,
+                            "property_overrides": [
+                                {
+                                    "name": "rotate.x",
+                                    "value": 34.941749572753906,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "rotate.y",
+                                    "value": -14.653802871704102,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "rotate.z",
+                                    "value": 10.023726463317871,
+                                    "type": "float"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "entity_path": [
+                        {
+                            "name": "camera",
+                            "index": 0
+                        }
+                    ],
+                    "group_overrids": [
+                        {
+                            "type_id": "{22B10178-39B6-4C12-BB37-77DB45FDD3B6}",
+                            "type_index": 0,
+                            "property_overrides": [
+                                {
+                                    "name": "translate.x",
+                                    "value": -0.9776992797851562,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "translate.y",
+                                    "value": 0.10182332992553711,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "translate.z",
+                                    "value": 0.52309250831604,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "rotate.x",
+                                    "value": -38.93260955810547,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "rotate.y",
+                                    "value": -47.39149475097656,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "rotate.z",
+                                    "value": 84.45735931396484,
+                                    "type": "float"
+                                }
+                            ]
+                        },
+                        {
+                            "type_id": "{CA85BDD5-C631-4C52-853C-06D654AE7E4D}",
+                            "type_index": 0,
+                            "property_overrides": [
+                                {
+                                    "name": "DepthCamera",
+                                    "value": true,
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "ColorCamera",
+                                    "value": true,
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "Enable",
+                                    "value": true,
+                                    "type": "bool"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wrist_camera_l",
+            "path": "/wrist_camera_l",
+            "type": "AssetActor",
+            "transform": {
+                "position": [
+                    18.244,
+                    -4.691,
+                    1.922
+                ],
+                "rotation": [
+                    0.8633705366264113,
+                    0.13840624645162605,
+                    -0.4790993297990333,
+                    0.07680403384400757
+                ],
+                "scale": 1.0
+            },
+            "asset_path": "assets/e071469a36d3c8aa/camera/camera",
+            "entity_overrides": [
+                {
+                    "entity_path": [
+                        {
+                            "name": "camera",
+                            "index": 0
+                        }
+                    ],
+                    "group_overrids": [
+                        {
+                            "type_id": "{22B10178-39B6-4C12-BB37-77DB45FDD3B6}",
+                            "type_index": 0,
+                            "property_overrides": [
+                                {
+                                    "name": "translate.x",
+                                    "value": -0.12397956848144531,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "translate.y",
+                                    "value": 1.377129077911377,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "translate.z",
+                                    "value": 0.5509319305419922,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "rotate.x",
+                                    "value": -21.816810607910156,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "rotate.y",
+                                    "value": -7.137627124786377,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "rotate.z",
+                                    "value": 87.90251159667969,
+                                    "type": "float"
+                                }
+                            ]
+                        },
+                        {
+                            "type_id": "{CA85BDD5-C631-4C52-853C-06D654AE7E4D}",
+                            "type_index": 0,
+                            "property_overrides": [
+                                {
+                                    "name": "DepthCamera",
+                                    "value": true,
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "ColorCamera",
+                                    "value": true,
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "ColorPort",
+                                    "value": 7080,
+                                    "type": "int"
+                                },
+                                {
+                                    "name": "DepthPort",
+                                    "value": 7081,
+                                    "type": "int"
+                                },
+                                {
+                                    "name": "Enable",
+                                    "value": true,
+                                    "type": "bool"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "wrist_camera_r",
+            "path": "/wrist_camera_r",
+            "type": "AssetActor",
+            "transform": {
+                "position": [
+                    18.22,
+                    -2.057,
+                    1.871
+                ],
+                "rotation": [
+                    0.9202606774465489,
+                    0.19948213647987958,
+                    0.3290002068333423,
+                    -0.07131638433529541
+                ],
+                "scale": 1.0
+            },
+            "asset_path": "assets/e071469a36d3c8aa/camera/camera",
+            "entity_overrides": [
+                {
+                    "entity_path": [
+                        {
+                            "name": "camera",
+                            "index": 0
+                        }
+                    ],
+                    "group_overrids": [
+                        {
+                            "type_id": "{22B10178-39B6-4C12-BB37-77DB45FDD3B6}",
+                            "type_index": 0,
+                            "property_overrides": [
+                                {
+                                    "name": "translate.x",
+                                    "value": -0.9436664581298828,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "translate.y",
+                                    "value": -1.442755937576294,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "translate.z",
+                                    "value": 0.4463768005371094,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "rotate.x",
+                                    "value": 169.49993896484375,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "rotate.y",
+                                    "value": -75.02710723876953,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "rotate.z",
+                                    "value": -78.14457702636719,
+                                    "type": "float"
+                                }
+                            ]
+                        },
+                        {
+                            "type_id": "{CA85BDD5-C631-4C52-853C-06D654AE7E4D}",
+                            "type_index": 0,
+                            "property_overrides": [
+                                {
+                                    "name": "DepthCamera",
+                                    "value": true,
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "ColorCamera",
+                                    "value": true,
+                                    "type": "bool"
+                                },
+                                {
+                                    "name": "ColorPort",
+                                    "value": 7090,
+                                    "type": "int"
+                                },
+                                {
+                                    "name": "DepthPort",
+                                    "value": 7091,
+                                    "type": "int"
+                                },
+                                {
+                                    "name": "Enable",
+                                    "value": true,
+                                    "type": "bool"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

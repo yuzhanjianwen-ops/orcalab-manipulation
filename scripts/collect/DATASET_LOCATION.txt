@@ -1,0 +1,26 @@
+OrcaLab 数据采集 —— 数据集位置备忘
+========================================================
+
+最新一次采集的数据集目录：
+  D:\OTHERS\projects\orcalab-manipulation\scripts\collect\dataset
+
+任务名  : pick the medbox
+更新时间: 2026-10-15 16:58:21
+
+--------------------------------------------------------
+结构说明
+--------------------------------------------------------
+  每个 episode 一个子目录，名字格式：
+      2026-09-28_164713_96b72dde/
+      <日期>_<时分秒>_<8位随机码>/
+          episode.hdf5   实际数据（HDF5）
+          meta.json      元信息（帧数/时长/字段形状）
+
+--------------------------------------------------------
+常用命令
+--------------------------------------------------------
+  用资源管理器打开：
+    explorer "D:\OTHERS\projects\orcalab-manipulation\scripts\collect\dataset"
+
+  看目录内容：
+    dir "D:\OTHERS\projects\orcalab-manipulation\scripts\collect\dataset"

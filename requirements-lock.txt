@@ -67,7 +67,6 @@ jsonschema-path==0.5.0
 jsonschema-specifications==2025.9.1
 keyring==25.7.0
 kiwisolver==1.5.1
-lerobot==0.6.2
 llvmlite==0.50.0
 Markdown==3.11
 markdown-it-py==4.2.0
@@ -92,14 +91,13 @@ opencv-python==5.0.0.93
 opencv-python-headless==4.13.0.92
 opentelemetry-api==1.45.1
 optype==0.13.4
-orca-gym==26.8.1
-orca-lab==26.8.1
-orcalab-pyside==26.8.1
+orca-gym==26.9.1
+orca-lab==26.9.1
+orcalab-pyside==26.9.1
 packaging==25.0
 pandas==3.0.6
 pathable==0.6.0
 pillow==12.0.0
-pip==26.1.2
 platformdirs==4.12.4
 propcache==0.5.4
 protobuf==5.29.6
@@ -108,8 +106,8 @@ py-key-value-aio==0.4.6
 pyarrow==26.0.0
 pycparser==3.11
 pydantic==2.14.0
-pydantic_core==2.50.0
 pydantic-settings==2.15.0
+pydantic_core==2.50.0
 pygame==2.6.1
 Pygments==2.21.0
 PyJWT==2.15.1
@@ -154,9 +152,9 @@ torchvision==0.26.0
 tqdm==4.70.1
 trimesh==5.1.1
 truststore==0.10.4
-typing_extensions==4.16.0
 typing-inspect==0.9.0
 typing-inspection==0.4.4
+typing_extensions==4.16.0
 tzdata==2026.5
 uncalled-for==0.4.1
 urllib3==2.8.0

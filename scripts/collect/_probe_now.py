@@ -52,7 +52,7 @@ u.EnumWindows(CB(_cb), None)
 print("=== 所有可见顶层窗口 ===")
 orca_wins = []
 for h, pid, pname, ppath, title in res:
-    is_orca = ("orca" in pname.lower()) or ("orcalab" in ppath.lower()) or ("26.8.1" in title)
+    is_orca = ("orca" in pname.lower()) or ("orcalab" in ppath.lower()) or ("26." in title)
     print("  hwnd=%-9d pid=%-6d %-20s %-40s %r%s" % (
         h, pid, pname, os.path.basename(ppath)[:38], title[:60], "   <== ORCA" if is_orca else ""))
     if is_orca:

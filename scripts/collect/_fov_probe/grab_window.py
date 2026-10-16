@@ -23,7 +23,7 @@ os.makedirs(OUT, exist_ok=True)
 for h, n, r in found:
     w, ht = r.right - r.left, r.bottom - r.top
     print("WIN", repr(n[:50]), "rect", r.left, r.top, w, ht)
-    if "Editor" in n or "26.8.1" in n or "RunTime" in n:
+    if "Editor" in n or "26." in n or "RunTime" in n:
         try:
             img = ImageGrab.grab(bbox=(r.left, r.top, r.right, r.bottom))
             fp = os.path.join(OUT, "window_grab_%d.png" % h)

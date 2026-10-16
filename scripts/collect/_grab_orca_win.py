@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""抓 OrcaStudio 主窗口（标题含 26.8.1），用于确认视口相机切换 UI。"""
+"""抓 OrcaStudio 主窗口（标题含 26.x），用于确认视口相机切换 UI。"""
 import os, sys, io, ctypes
 from ctypes import wintypes
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
@@ -27,7 +27,7 @@ OUT = r"D:\OTHERS\projects\orcalab-manipulation\scripts\collect\_fov_probe\ui"
 os.makedirs(OUT, exist_ok=True)
 
 for h, pid, title, r in found:
-    if "26.8.1" in title or "OrcaStudio" in title or "OrcaLab" in title:
+    if "26." in title or "OrcaStudio" in title or "OrcaLab" in title:
         w, ht = r.right - r.left, r.bottom - r.top
         print("WIN pid=%d  %dx%d  %r" % (pid, w, ht, title[:70]))
         try:

@@ -240,7 +240,7 @@ data/dataset/<YYYY-MM-DD_HHMMSS>_<短uuid>/
 > 完整的分步复现流程见 **`docs/复现指南.md`**（含前置条件、资产同步、验收步骤）。
 > 下面是最小要点。
 
-1. 装好 OrcaLab / OrcaStudio **26.8.1** 与 `orcalab281` conda 环境（版本需与仿真端一致；
+1. 装好 OrcaLab / OrcaStudio **26.9.1** 与 `orcalab281` conda 环境（版本需与仿真端一致；
    环境清单见 `environment.yml`）。
 2. 启动 OrcaStudio，加载 `scenes/SimpleMovement2.json`（**主场景**）。
 3. 本目录可整份拷走，**无需改动代码**（路径均为相对当前文件的 `HERE` 推导）。

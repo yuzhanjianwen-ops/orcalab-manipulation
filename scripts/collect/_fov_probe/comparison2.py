@@ -20,7 +20,7 @@ def cb(h, l):
     pid = ctypes.c_ulong(); u.GetWindowThreadProcessId(h, ctypes.byref(pid))
     if pid.value == 28268:
         n = ctypes.create_unicode_buffer(512); u.GetWindowTextW(h, n, 512)
-        if u.IsWindowVisible(h) and "26.8.1" in n.value:
+        if u.IsWindowVisible(h) and "26." in n.value:
             hs.append(h)
     return True
 u.EnumWindows(CB(cb), None)

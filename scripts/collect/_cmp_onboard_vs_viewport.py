@@ -63,7 +63,7 @@ def find_orca():
             return True
         n = ctypes.create_unicode_buffer(512)
         u.GetWindowTextW(h, n, 512)
-        if n.value.strip().startswith("26.8.1"):
+        if n.value.strip().startswith("26."):
             hw.append(h)
         return True
 

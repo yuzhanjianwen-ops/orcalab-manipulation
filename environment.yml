@@ -114,9 +114,9 @@ dependencies:
       - opencv-python-headless==4.13.0.92
       - opentelemetry-api==1.45.1
       - optype==0.13.4
-      - orca-gym==26.8.1
-      - orca-lab==26.8.1
-      - orcalab-pyside==26.8.1
+      - orca-gym==26.9.1
+      - orca-lab==26.9.1
+      - orcalab-pyside==26.9.1
       - packaging==25.0
       - pandas==3.0.6
       - pathable==0.6.0
